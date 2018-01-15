@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.vishalan.koinex.HomeActivity">
+
+    <RelativeLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary"
+        android:theme="@style/AppTheme.AppBarOverlay">
+        <ImageView
+            android:id="@+id/iconHome"
+            android:src="@mipmap/ic_launcher"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:layout_centerVertical="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textSize="20dp"
+            android:layout_toRightOf="@+id/iconHome"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:text="@string/app_name"/>
+
+        <Button
+            android:id="@+id/editButton"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/saveButton"
+            android:layout_centerVertical="true"
+            android:layout_weight="1"
+            android:text="Edit" />
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_weight="1"
+            android:text="Save" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewTitle"
+        android:layout_marginTop="5dp"
+        android:text="Set Notifications For Instant Price Updates"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@id/appBarLayout"
+        android:layout_below="@+id/appBarLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <ListView
+        android:id="@+id/listViewRates"
+        android:layout_width="match_parent"
+        android:layout_height="391dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewTitle"
+        tools:layout_editor_absoluteX="8dp"
+        android:layout_below="@+id/textViewTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/adViewBanner" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adViewBanner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:adSize="BANNER"
+        app:adUnitId="@string/homeactivity_ad_banner"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+
+
+</RelativeLayout>
